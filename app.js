@@ -13,7 +13,6 @@ function IdeaConstructor(title, body, quality) {
 
 function appendIdea() {
   // var id = uniqueId();
-  $('.idea-section').prepend(`<article><h2>${$title.val()}</h2><button class="delete">delete</button><p>${$body.val()}</p></article>`);
+  $('.idea-section').append(`<article class="idea-card"><h2>${$title.val()}</h2><button class="delete">delete</button><p>${$body.val()}</p></article><p>${$}`);
 
 };
-
