@@ -15,7 +15,7 @@ EM: I want to know localstorage "front-to-back"
 
 SL: To get the CSS spot on and responsive, with the wonderful functionality in js, while utilizing jQuery as a library.
 
-EM: To get through all functionality and deepen my understanding javascript
+EM: To get through all functionality and deepen my understanding of javascript
 
 # Team strengths:
 
