@@ -4,7 +4,16 @@ var $body = $('.body-input');
 
 $saveButton.click(appendIdea);
 
+function IdeaConstructor(title, body, quality) {
+  this.title = title;
+  this.body = body;
+  this.id = Date.now();
+  this.quality = quality || 'swill';
+}
+
 function appendIdea() {
-  $('.idea-section').prepend(`<article><h2>${$title.val()}</h2><p>${$body.val()}</p></article>`)
+  // var id = uniqueId();
+  $('.idea-section').prepend(`<article><h2>${$title.val()}</h2><button class="delete">delete</button><p>${$body.val()}</p></article>`);
+
 };
 
