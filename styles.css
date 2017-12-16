@@ -3,13 +3,72 @@ html {
 }
 
 body {
+  font-family: 'Open Sans', sans-serif;
 
 }
 
 h1 {
   font-family: 'Roboto Slab', serif;
+  font-size: 3rem;
+}
+
+.top-section {
+  background-color: #e5f3f2;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 header {
-  background-color: #e5f3f2;
+  display: block;
+}
+
+span {
+  color: #00a79d;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+input {
+  margin: 1rem;
+  border: solid 2px #d1d2d4;
+  height: 5rem;
+  font-size: 3rem;
+}
+
+input::placeholder {
+  color: #bdbec0;
+  padding-left: .5rem;
+
+}
+
+.body-input {
+  height: 6rem;
+}
+
+.save-button {
+  background-color: #00a79d;
+  color: #fff;
+}
+
+.idea-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#search-box {
+  width: 84%;
+}
+.idea-card {
+  display: block;
 }
