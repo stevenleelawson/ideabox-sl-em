@@ -9,3 +9,7 @@ body {
 h1 {
   font-family: 'Roboto Slab', serif;
 }
+
+header {
+  background-color: #e5f3f2;
+}
