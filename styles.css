@@ -10,7 +10,8 @@ body {
   align-self: flex-end;
 }
 
-h1 {
+h1
+ {
   font-family: 'Roboto Slab', serif;
   font-size: 3rem;
 }
@@ -98,4 +99,8 @@ input::placeholder {
 }
 .idea-card {
   display: block;
+}
+
+.delete {
+  border: 0px;
 }

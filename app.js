@@ -1,6 +1,8 @@
 var $saveButton = $('.save-button');
 var $title = $('.title-input');
 var $body = $('.body-input');
+var $ideaCard = $('.idea-card');
+var $ideaSection = $('.idea-section')
 
 $saveButton.click(appendIdea);
 $('.idea-section').on('click', '.upvote', toggleQuality);
@@ -21,3 +23,8 @@ function appendIdea() {
 function toggleQuality() {
   console.log('swill')
 };
+
+$ideaSection.on('click', '.delete', function(e){
+  $(this).parent().remove();
+  console.log(e);
+})
