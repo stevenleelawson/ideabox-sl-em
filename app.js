@@ -17,8 +17,15 @@ function IdeaConstructor(title, body, quality) {
 
 function appendIdea() {
   // var id = uniqueId();
-  $('.idea-section').append(`<article class="idea-card"><div class="card-header"><h2>${$title.val()}</h2><button class="delete">delete</button></div><p class="idea-body">${$body.val()}</p><p><button class="upvote">upvote</button>quality: "swill"</p></article>`);
+  $('.idea-section').append(
+    `<article class="idea-card">
+      <h2>${$title.val()}</h2>
+      <input type="image" src="images/delete.svg" class="delete">
+      <p class="body-text">${$body.val()}</p>;
+      <input type="image" src="images/upvote.svg" alt="upvote image" class="upvote">
+    </article>`);
 };
+
 
 function toggleQuality() {
   console.log('swill')
