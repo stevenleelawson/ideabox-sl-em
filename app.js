@@ -1,6 +1,8 @@
 var $saveButton = $('.save-button');
 var $title = $('.title-input');
 var $body = $('.body-input');
+var $ideaCard = $('.idea-card');
+var $ideaSection = $('.idea-section')
 
 $saveButton.click(appendIdea);
 $('.idea-section').on('click', '.upvote', upvoteButton);
@@ -31,3 +33,8 @@ function upvoteButton() {
     $(this).parent().find('.quality').text('genius');
   }
 };
+
+$ideaSection.on('click', '.delete', function(e){
+  $(this).parent().remove();
+  console.log(e);
+})
