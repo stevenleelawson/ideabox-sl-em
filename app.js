@@ -1,6 +1,6 @@
 $(document).ready(rebuildIdea);
 
-
+var ideaArray = [];
 var $saveButton = $('.save-button');
 var $title = $('.title-input');
 var $body = $('.body-input');
@@ -19,28 +19,33 @@ function Idea(title, body, quality) {
   this.quality = quality || 'swill';
 };
 
-function storeIdea (ideaCard){
-  var stringifiedIdea = JSON.stringify(ideaCard);
-  localStorage.setItem('ideaCard', stringifiedIdea);
+function storeIdea (ideaArray){
+  var stringifiedIdea = JSON.stringify(ideaArray);
+  localStorage.setItem('ideaCards', stringifiedIdea);
   //associate idea card with IdeaConstructor function
   //grab all generated cards and store them
 }
 
 function rebuildIdea(){
-  var retrievedCard = localStorage.getItem('ideaCard');
-  var parsedCard = JSON.parse(retrievedCard);
-  appendIdea(parsedCard);
+  // var retrievedCards = localStorage.getItem('ideaCards') || [];
+  var parsedCards = JSON.parse(localStorage.getItem('ideaCards')) || [];
+  console.log(parsedCards);
+  parsedCards.forEach(function () {
+    createIdea();
+  });
+}
+
+function displayStoredIdeas() {
+
 }
 
 function createIdea(){
   var title = $title.val();
   var body = $body.val();
   var ideaCard = new Idea(title, body);
-  var ideaArray = [];
   ideaArray.push(ideaCard);
-
   appendIdea(ideaCard)
-  storeIdea(ideaCard);
+  storeIdea(ideaArray);
 }
 
 function appendIdea(ideaCard) {
