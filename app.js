@@ -5,7 +5,7 @@ var $ideaCard = $('.idea-card');
 var $ideaSection = $('.idea-section')
 
 $saveButton.click(appendIdea);
-$('.idea-section').on('click', '.upvote', toggleQuality);
+$('.idea-section').on('click', '.upvote', upvoteButton);
 // $downvote.click(toggleQuality);
 
 function IdeaConstructor(title, body, quality) {
@@ -16,7 +16,6 @@ function IdeaConstructor(title, body, quality) {
 };
 
 function appendIdea() {
-  // var id = uniqueId();
   $('.idea-section').append(
     `<article class="idea-card">
       <h2>${$title.val()}</h2>
@@ -27,8 +26,13 @@ function appendIdea() {
 };
 
 
-function toggleQuality() {
-  console.log('swill')
+function upvoteButton() {
+  var quality = $(this).parent().find('.quality').text();
+  if (quality === 'swill') {
+    $(this).parent().find('.quality').text("plausible");
+  } else {
+    $(this).parent().find('.quality').text('genius');
+  }
 };
 
 $ideaSection.on('click', '.delete', function(e){
