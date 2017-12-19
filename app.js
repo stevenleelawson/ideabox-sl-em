@@ -9,6 +9,7 @@ var $ideaSection = $('.idea-section')
 
 $saveButton.click(createIdea);
 $('.idea-section').on('click', '.upvote', upvoteButton);
+$ideaSection.on('click', '.downvote', downvoteButton);
 // $downvote.click(toggleQuality);
 
 function Idea(title, body, quality) {
@@ -65,8 +66,15 @@ function upvoteButton() {
     $(this).parent().find('.quality').text('genius');
   }
 };
+function downvoteButton(){
+  var quality = $(this).parent().find('.quality').text();
+  if (quality === 'genius'){
+    $(this).parent().find('.quality').text("plausible");
+  } else {
+    $(this).parent().find('.quality').text("swill");
 
+  }
+}
 $ideaSection.on('click', '.delete', function(e){
   $(this).parent().remove();
-  console.log(e);
 })
