@@ -8,7 +8,7 @@ var $ideaCard = $('.idea-card');
 var $ideaSection = $('.idea-section')
 
 $saveButton.click(createIdea);
-$('.idea-section').on('click', '.upvote', upvoteButton);
+$ideaSection.on('click', '.upvote', upvoteButton);
 $ideaSection.on('click', '.downvote', downvoteButton);
 // $downvote.click(toggleQuality);
 
@@ -22,8 +22,6 @@ function Idea(title, body, quality) {
 function storeIdea (key, ideaCards){
   var stringifiedIdea = JSON.stringify(ideaCards);
   localStorage.setItem(key, stringifiedIdea);
-  //associate idea card with IdeaConstructor function
-  //grab all generated cards and store them
 }
 
 function rebuildIdea(){
@@ -49,7 +47,7 @@ function createIdea(){
 }
 
 function appendIdea(ideaCard) {
-  $('.idea-section').append(
+  $ideaSection.append(
     `<article class="idea-card">
       <h2>${ideaCard.title}</h2>
       <input type="image" src="images/delete.svg" class="delete">
