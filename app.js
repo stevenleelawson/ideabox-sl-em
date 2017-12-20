@@ -19,9 +19,9 @@ function Idea(title, body, quality) {
   this.quality = quality || 'swill';
 };
 
-function storeIdea (ideaArray){
-  var stringifiedIdea = JSON.stringify(ideaArray);
-  localStorage.setItem('ideaCards', stringifiedIdea);
+function storeIdea (key, ideaCards){
+  var stringifiedIdea = JSON.stringify(ideaCards);
+  localStorage.setItem(key, stringifiedIdea);
   //associate idea card with IdeaConstructor function
   //grab all generated cards and store them
 }
@@ -43,9 +43,9 @@ function createIdea(){
   var title = $title.val();
   var body = $body.val();
   var ideaCard = new Idea(title, body);
-  ideaArray.push(ideaCard);
+  // ideaArray.push(ideaCard);
   appendIdea(ideaCard)
-  storeIdea(ideaArray);
+  storeIdea(ideaCard.id, ideaCard);
 }
 
 function appendIdea(ideaCard) {
