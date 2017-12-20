@@ -11,7 +11,12 @@ $saveButton.click(createIdea);
 
 $ideaSection.on('click', '.upvote', upvoteButton);
 $ideaSection.on('click', '.downvote', downvoteButton);
-// $downvote.click(toggleQuality);
+$ideaSection.on('click', function(e){
+  preventDefault(e);
+  // $title.val('');
+  // $body.val('');
+});
+
 
 function Idea(title, body, quality) {
   this.title = title;
@@ -35,6 +40,13 @@ function rebuildIdea(){
   for(var i = 0; i < localStorage.length; i++) {
     console.log(localStorage[i]);
   }
+//   function fetchIdea(idea) {
+//  for (var i = 0; i < localStorage.length; i++){
+//    var retrieveObject = localStorage.getItem(localStorage.key(i));
+//    var parsedObject = JSON.parse(retrieveObject);
+//    prependIdea(parsedObject);
+//  }
+// }
 }
 
 function createIdea(){
@@ -47,17 +59,22 @@ function createIdea(){
 }
 
 function appendIdea(ideaCard) {
-  $ideaSection.append(
-    `<article class="idea-card">
-      <h2>${ideaCard.title}</h2>
-      <input type="image" src="images/delete.svg" class="delete">
-      <p class="body-text">${ideaCard.body}</p>;
-      <input type="image" src="images/upvote.svg" alt="upvote image" class="upvote">
-      <input type="image" src="images/downvote.svg" alt="downvote image" class="downvote">
-      <p class="quality">swill</p>
+  $ideaSection.prepend(
+    `<article class="idea-card card">
+      <div class="top-line">
+        <h2>${ideaCard.title}</h2>
+        <input type="image" src="images/delete.svg" class="delete">
+      </div>
+      <p class="body-text">${ideaCard.body}</p>
+      <div class='vote-buttons'>
+        <input type="image" src="images/upvote.svg" alt="upvote image" class="upvote">
+        <input type="image" src="images/downvote.svg" alt="downvote image" class="downvote">
+        <div class="quality-container"
+          <p class="body-text">quality: </p>
+          <p class="quality"><p>&nbsp</p> swill</p>
+        </div>
+      </div>
     </article>`)
-  $title.val('');
-  $body.val('');
 };
 
 
@@ -79,5 +96,5 @@ function downvoteButton(){
   }
 }
 $ideaSection.on('click', '.delete', function(e){
-  $(this).parent().remove();
+  $(this).parents('.card').remove();
 })

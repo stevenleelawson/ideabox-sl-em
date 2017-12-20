@@ -6,10 +6,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.delete {
-  align-self: flex-end;
-}
-
 h1
  {
   font-family: 'Roboto Slab', serif;
@@ -17,8 +13,6 @@ h1
 }
 
 h2 {
-  display: inline-block;
-  align-self: flex-end;
   font-family: 'Roboto Slab';
   font-size: 4rem;
   color: #6D6E71;
@@ -36,18 +30,6 @@ h2 {
 
 header {
   display: block;
-}
-
-.card-header {
-  display: inline-flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.idea-card {
-  border-bottom: solid 3px #bdbec0;
-  height: 20rem;
-  width: 83%;
 }
 
 .idea-body {
@@ -98,14 +80,41 @@ input::placeholder {
 #search-box {
   width: 84%;
 }
+
 .idea-card {
-  display: block;
+  width: 100%;
+  height: 40rem;
+  border-bottom: solid 3px #bdbec0;
+  height: 20rem;
+  width: 83%;
 }
 
-.delete {
+.delete,
+.upvote,
+.downvote {
   border: 0px;
+  width: 3rem;
+}
+.vote-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.delete {
 }
 
 .body-text {
+  font-size: 2rem;
+}
+
+.quality-container {
+  display: flex;
+  flex-direction: row;
+  margin: 2.5rem;
   font-size: 2rem;
 }
