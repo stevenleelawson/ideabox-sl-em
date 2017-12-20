@@ -8,6 +8,7 @@ var $ideaCard = $('.idea-card');
 var $ideaSection = $('.idea-section')
 
 $saveButton.click(createIdea);
+
 $ideaSection.on('click', '.upvote', upvoteButton);
 $ideaSection.on('click', '.downvote', downvoteButton);
 // $downvote.click(toggleQuality);
@@ -27,14 +28,13 @@ function storeIdea (key, ideaCards){
 function rebuildIdea(){
   // var retrievedCards = localStorage.getItem('ideaCards') || [];
   var parsedCards = JSON.parse(localStorage.getItem('ideaCards')) || [];
-  console.log(parsedCards);
-  parsedCards.forEach(function () {
-    createIdea();
-  });
-}
+  // parsedCards.forEach(function(val, index, array) {
+  //   appendIdea(parsedCards);
+  // });
 
-function displayStoredIdeas() {
-
+  for(var i = 0; i < localStorage.length; i++) {
+    console.log(localStorage[i]);
+  }
 }
 
 function createIdea(){
