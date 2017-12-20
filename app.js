@@ -71,7 +71,7 @@ function appendIdea(ideaCard) {
         <input type="image" src="images/downvote.svg" alt="downvote image" class="downvote">
         <div class="quality-container"
           <p class="body-text">quality: </p>
-          <p class="quality">&nbsp swill</p>
+          <p class="quality"><p>&nbsp</p> swill</p>
         </div>
       </div>
     </article>`)
