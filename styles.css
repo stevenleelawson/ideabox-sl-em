@@ -4,12 +4,15 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
 }
 
 h1
  {
   font-family: 'Roboto Slab', serif;
   font-size: 3rem;
+  margin-bottom: 2rem;
+  margin-top: -4rem;
 }
 
 h2 {
@@ -83,10 +86,11 @@ input::placeholder {
 
 .idea-card {
   width: 100%;
-  height: 40rem;
+  height: 15rem;
   border-bottom: solid 3px #bdbec0;
   height: 20rem;
   width: 83%;
+  margin: 1rem;
 }
 
 .delete,
@@ -95,17 +99,18 @@ input::placeholder {
   border: 0px;
   width: 3rem;
 }
+
 .vote-buttons {
   display: flex;
   flex-direction: row;
+  margin: 1rem;
+  margin-left: -.5rem;
 }
 
 .top-line {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-.delete {
 }
 
 .body-text {
@@ -117,4 +122,22 @@ input::placeholder {
   flex-direction: row;
   margin: 2.5rem;
   font-size: 2rem;
+}
+
+.quality {
+  color: #6d6e71;
+}
+
+@media screen and (min-width: 400px){
+  form {
+    width: 80%;
+  }
+  #search-box {
+    width: 78%;
+  }
+  .card {
+    width: 70%;
+    height: 18rem;
+    margin: 1rem;
+  }
 }

@@ -1,6 +1,5 @@
 $(document).ready(rebuildIdea);
 
-var ideaArray = [];
 var $saveButton = $('.save-button');
 var $title = $('.title-input');
 var $body = $('.body-input');
@@ -10,13 +9,8 @@ var $ideaSection = $('.idea-section')
 $saveButton.click(createIdea);
 
 $ideaSection.on('click', '.upvote', upvoteButton);
-$ideaSection.on('click', '.downvote', downvoteButton);
-$ideaSection.on('click', function(e){
-  preventDefault(e);
-  // $title.val('');
-  // $body.val('');
-});
 
+$ideaSection.on('click', '.downvote', downvoteButton);
 
 function Idea(title, body, quality) {
   this.title = title;
@@ -30,23 +24,17 @@ function storeIdea (key, ideaCards){
   localStorage.setItem(key, stringifiedIdea);
 }
 
-function rebuildIdea(){
-  // var retrievedCards = localStorage.getItem('ideaCards') || [];
-  var parsedCards = JSON.parse(localStorage.getItem('ideaCards')) || [];
-  // parsedCards.forEach(function(val, index, array) {
-  //   appendIdea(parsedCards);
-  // });
+function removeIdea (){
 
-  for(var i = 0; i < localStorage.length; i++) {
-    console.log(localStorage[i]);
+  // localStorage.removeItem(ideaCard.id, ideaCard);
+}
+
+function rebuildIdea(){
+  for (var i = 0; i < localStorage.length; i++){
+    var retrievedObject = localStorage.getItem(localStorage.key(i));
+    var parsedObject = JSON.parse(retrievedObject);
+    appendIdea(parsedObject);
   }
-//   function fetchIdea(idea) {
-//  for (var i = 0; i < localStorage.length; i++){
-//    var retrieveObject = localStorage.getItem(localStorage.key(i));
-//    var parsedObject = JSON.parse(retrieveObject);
-//    prependIdea(parsedObject);
-//  }
-// }
 }
 
 function createIdea(){
@@ -59,8 +47,8 @@ function createIdea(){
 }
 
 function appendIdea(ideaCard) {
-  $ideaSection.prepend(
-    `<article class="idea-card card">
+  $ideaSection.append(
+    `<article class="idea-card card"  id=${ideaCard.id}>
       <div class="top-line">
         <h2>${ideaCard.title}</h2>
         <input type="image" src="images/delete.svg" class="delete">
@@ -70,8 +58,8 @@ function appendIdea(ideaCard) {
         <input type="image" src="images/upvote.svg" alt="upvote image" class="upvote">
         <input type="image" src="images/downvote.svg" alt="downvote image" class="downvote">
         <div class="quality-container"
-          <p class="body-text">quality: </p>
-          <p class="quality"><p>&nbsp</p> swill</p>
+          <p class="body-text">quality: &nbsp</p>
+          <p class='quality'>swill</p>
         </div>
       </div>
     </article>`)
@@ -85,7 +73,8 @@ function upvoteButton() {
   } else {
     $(this).parent().find('.quality').text('genius');
   }
-};
+}
+
 function downvoteButton(){
   var quality = $(this).parent().find('.quality').text();
   if (quality === 'genius'){
@@ -96,5 +85,8 @@ function downvoteButton(){
   }
 }
 $ideaSection.on('click', '.delete', function(e){
+  var storageId = $(this).parents('.card').attr('id');
+  localStorage.removeItem(storageId);
   $(this).parents('.card').remove();
+  console.log(this);
 })
