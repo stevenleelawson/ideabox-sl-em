@@ -41,7 +41,6 @@ function createIdea(){
   var title = $title.val();
   var body = $body.val();
   var ideaCard = new Idea(title, body);
-  // ideaArray.push(ideaCard);
   appendIdea(ideaCard)
   storeIdea(ideaCard.id, ideaCard);
 }
@@ -50,10 +49,10 @@ function appendIdea(ideaCard) {
   $ideaSection.append(
     `<article class="idea-card card"  id=${ideaCard.id}>
       <div class="top-line">
-        <h2>${ideaCard.title}</h2>
+        <h2 contentEditable = "true">${ideaCard.title}</h2>
         <input type="image" src="images/delete.svg" class="delete">
       </div>
-      <p class="body-text">${ideaCard.body}</p>
+      <p class="body-text" contentEditable = "true">${ideaCard.body}</p>
       <div class='vote-buttons'>
         <input type="image" src="images/upvote.svg" alt="upvote image" class="upvote">
         <input type="image" src="images/downvote.svg" alt="downvote image" class="downvote">
@@ -63,6 +62,8 @@ function appendIdea(ideaCard) {
         </div>
       </div>
     </article>`)
+    $title.val('');
+    $body.val('');
 };
 
 
