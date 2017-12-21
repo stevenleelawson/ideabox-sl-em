@@ -93,8 +93,37 @@ TBD
 
 All the Tools
 
-#Additional Notes:
+# Additional Notes:
 
 Looking forward to working with you, Edgar!
 
 Thanks!
+
+# EVAL
+-more attention to detail in comp
+    -hover
+    -ideabox title
+
+CSS
+
+Pick conventions *some sort* and stick with it!
+
+JS
+
+GIT
+
+git commit conventions
+- should tell a story about the commit
+-look back at git conventions (additional resources at bottom)
+
+
+SEARCH BAR
+1. TAKE INPUT
+2. ADD EVENT LISTENER KEYUP
+3. COMPARE INPUT TO BODY AND TITLE
+4. IF INPUT MATCHES WHAT’S IN BODY OR TITLE
+5. KEEP CARD ON PAGE
+6. IF NOT
+7. HIDE CARDS
+
+ALSO LOOK FOR COMMENTS IN CODE!!!!!!

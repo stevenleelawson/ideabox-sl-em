@@ -1,14 +1,14 @@
 html {
   font-size: 10px;
+  /*Roboto slab, serif*/
 }
-
+/*idomatic  or alphabetize convention and stick with it*/
 body {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
 }
 
-h1
- {
+h1 {
   font-family: 'Roboto Slab', serif;
   font-size: 3rem;
   margin-bottom: 2rem;
@@ -105,6 +105,8 @@ input::placeholder {
   flex-direction: row;
   margin: 1rem;
   margin-left: -.5rem;
+  /*NO NEGATIVES!!*/
+  /*APPLY A POSITIVE MARGIN TO A DIFERENT ELEMENT TO ACHEIVE SAME TAHNG*/
 }
 
 .top-line {
@@ -153,6 +155,7 @@ input::placeholder {
   #search-box {
     width: 58%;
     margin-bottom: 4rem;
+    /*DUPLICATE LINE AS LINE 140*/
   }
 
   .card {
@@ -178,6 +181,7 @@ input::placeholder {
   #search-box {
     width: 58%;
     margin-bottom: 4rem;
+    /*SAME DEAL*/
   }
 
   .card {
