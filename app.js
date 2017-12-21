@@ -1,6 +1,5 @@
 $(document).ready(rebuildIdea);
 
-var ideaArray = [];
 var $saveButton = $('.save-button');
 var $title = $('.title-input');
 var $body = $('.body-input');
@@ -10,6 +9,7 @@ var $ideaSection = $('.idea-section')
 $saveButton.click(createIdea);
 
 $ideaSection.on('click', '.upvote', upvoteButton);
+
 $ideaSection.on('click', '.downvote', downvoteButton);
 
 function Idea(title, body, quality) {
@@ -47,7 +47,7 @@ function createIdea(){
 }
 
 function appendIdea(ideaCard) {
-  $ideaSection.prepend(
+  $ideaSection.append(
     `<article class="idea-card card"  id=${ideaCard.id}>
       <div class="top-line">
         <h2>${ideaCard.title}</h2>
@@ -58,8 +58,8 @@ function appendIdea(ideaCard) {
         <input type="image" src="images/upvote.svg" alt="upvote image" class="upvote">
         <input type="image" src="images/downvote.svg" alt="downvote image" class="downvote">
         <div class="quality-container"
-          <p class="body-text"></p>
-          <p class="quality"><p>${ideaCard.quality}</p></p>
+          <p class="body-text">quality: &nbsp</p>
+          <p class='quality'>swill</p>
         </div>
       </div>
     </article>`)
