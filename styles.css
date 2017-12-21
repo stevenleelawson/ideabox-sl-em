@@ -141,3 +141,49 @@ input::placeholder {
     margin: 1rem;
   }
 }
+@media screen and (min-width: 800px){
+  form {
+    width: 60%;
+  }
+
+  #search-box {
+    width: 66%;
+  }
+  .card {
+    width: 65%;
+    height: 18rem;
+    margin: 1rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  /*input {
+    height: 3rem;
+  }*/
+}
+
+@media screen and (min-width: 900px){
+  form {
+    width: 60%;
+  }
+
+  #search-box {
+    width: 58%;
+    margin-bottom: 4rem;
+  }
+
+  .card {
+    width: 57%;
+    height: 18rem;
+    margin: 1rem;
+  }
+
+  /*input {
+    height: 3rem;
+  }*/
+
+  h1 {
+    font-size: 4rem;
+  }
+}
