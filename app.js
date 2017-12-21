@@ -46,7 +46,7 @@ function appendIdea(ideaCard) {
   $ideaSection.append(
     `<article class="idea-card card"  id=${ideaCard.id}>
       <div class="top-line">
-        <h2 contentEditable = "true">${ideaCard.title}</h2>
+        <h2 contentEditable = "true" class="title">${ideaCard.title}</h2>
         <input type="image" src="images/delete.svg" class="delete">
       </div>
       <p class="body-text" contentEditable = "true">${ideaCard.body}</p>
@@ -86,4 +86,16 @@ $ideaSection.on('click', '.delete', function(e){
   var storageId = $(this).parents('.card').attr('id');
   localStorage.removeItem(storageId);
   $(this).parents('.card').remove();
+})
+
+$ideaSection.on('blur', '.card', function(e){
+  var cardId = $(this).attr('id');
+  var pulledObject = localStorage.getItem(cardId);
+  var parsedObject = JSON.parse(pulledObject);
+  var userTitle = $(this).find('.title').text();
+  parsedObject.title = userTitle;
+  var stringedObject = JSON.stringify(parsedObject)
+  console.log(stringedObject)
+  localStorage.setItem(cardId, stringedObject);
+  // console.log(this.updateId)
 })
