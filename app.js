@@ -5,6 +5,7 @@ var $title = $('.title-input');
 var $body = $('.body-input');
 var $ideaCard = $('.idea-card');
 var $ideaSection = $('.idea-section')
+var $searchBox = $('#search-box');
 
 $saveButton.click(createIdea);
 
@@ -22,11 +23,7 @@ function Idea(title, body, quality) {
 function storeIdea (key, ideaCards){
   var stringifiedIdea = JSON.stringify(ideaCards);
   localStorage.setItem(key, stringifiedIdea);
-}
-
-function removeIdea (){
-
-  // localStorage.removeItem(ideaCard.id, ideaCard);
+  console.log(ideaCards)
 }
 
 function rebuildIdea(){
@@ -66,7 +63,6 @@ function appendIdea(ideaCard) {
     $body.val('');
 };
 
-
 function upvoteButton() {
   var quality = $(this).parent().find('.quality').text();
   if (quality === 'swill') {
@@ -85,9 +81,9 @@ function downvoteButton(){
 
   }
 }
+
 $ideaSection.on('click', '.delete', function(e){
   var storageId = $(this).parents('.card').attr('id');
   localStorage.removeItem(storageId);
   $(this).parents('.card').remove();
-  console.log(this);
 })
